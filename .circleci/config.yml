@@ -22,4 +22,4 @@ jobs:
           command: yarn run build
       - run:
           name: firebase-deploy
-          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --only hosting
+          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --only hosting --project touch-in-app
