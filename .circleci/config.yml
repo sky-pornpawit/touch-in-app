@@ -20,12 +20,12 @@ jobs:
       - run:
           name: build
           command: |
-            export REACT_APP_FIREBASE_API_KEY=${FIREBASE_API_KEY} 
-            export REACT_APP_FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID} 
-            export REACT_APP_FIREBASE_APP_ID=${FIREBASE_APP_ID} 
-            export REACT_FIREBASE_MESSAGING_ID=${FIREBASE_MESSAGING_ID} 
-            export REACT_APP_FIREBASE_MEASUREMENT_ID=${FIREBASE_MEASUREMENT_ID} 
-            yarn run build
+            REACT_APP_FIREBASE_API_KEY=${FIREBASE_API_KEY} 
+            REACT_APP_FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID} 
+            REACT_APP_FIREBASE_APP_ID=${FIREBASE_APP_ID} 
+            REACT_FIREBASE_MESSAGING_ID=${FIREBASE_MESSAGING_ID} 
+            REACT_APP_FIREBASE_MEASUREMENT_ID=${FIREBASE_MEASUREMENT_ID} 
+            ./node_modules/.bin react-scripts build
       - run:
           name: firebase-deploy
           command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --only hosting --project touch-in-app
