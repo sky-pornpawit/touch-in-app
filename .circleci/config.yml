@@ -18,8 +18,11 @@ jobs:
           paths:
             - ./node_modules
       - run:
+          name: echo
+          command: echo "$FIREBASE_PROJECT_ID"
+      - run:
           name: build
-          command: REACT_APP_FIREBASE_API_KEY="$FIREBASE_API_KEY" REACT_APP_FIREBASE_PROJECT_ID="FIREBASE_PROJECT_ID" REACT_APP_FIREBASE_APP_ID="$FIREBASE_APP_ID" REACT_FIREBASE_MESSAGING_ID="$FIREBASE_MESSAGING_ID" REACT_APP_FIREBASE_MEASUREMENT_ID="$FIREBASE_MEASUREMENT_ID" yarn run build
+          command: REACT_APP_FIREBASE_API_KEY="$FIREBASE_API_KEY" REACT_APP_FIREBASE_PROJECT_ID="$FIREBASE_PROJECT_ID" REACT_APP_FIREBASE_APP_ID="$FIREBASE_APP_ID" REACT_FIREBASE_MESSAGING_ID="$FIREBASE_MESSAGING_ID" REACT_APP_FIREBASE_MEASUREMENT_ID="$FIREBASE_MEASUREMENT_ID" yarn run build
       - run:
           name: firebase-deploy
           command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --only hosting --project touch-in-app
