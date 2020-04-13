@@ -25,7 +25,7 @@ jobs:
             REACT_APP_FIREBASE_APP_ID=${FIREBASE_APP_ID} 
             REACT_FIREBASE_MESSAGING_ID=${FIREBASE_MESSAGING_ID} 
             REACT_APP_FIREBASE_MEASUREMENT_ID=${FIREBASE_MEASUREMENT_ID} 
-            ./node_modules/.bin react-scripts build
+            ./node_modules/.bin/react-scripts build
       - run:
           name: firebase-deploy
           command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --only hosting --project touch-in-app
