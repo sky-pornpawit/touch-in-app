@@ -1,0 +1,49 @@
+#flyoutMenu {
+  width: 50%;
+  height: 100vh;
+  background-color: var(--disabled);
+  position: fixed;
+  top: 46px;
+  left: 0;
+  transition: transform 0.3s ease-in;
+  overflow: auto;
+  z-index: 1000;
+  padding: 10px;
+  outline: none;
+
+  &:focus {
+    border: none;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 20%;
+    padding: 20px;
+    top: 57px;
+  }
+
+  &.show {
+    transform: translateX(0);
+  }
+
+  &.hide {
+    transform: translateX(-100%);
+  }
+
+  h2 a {
+    color: #333;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.menubar {
+  width: 100%;
+  background-color: var(--primary);
+
+  span {
+    cursor: pointer;
+  }
+}
