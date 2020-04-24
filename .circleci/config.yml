@@ -4,6 +4,10 @@ jobs:
     working_directory: ~/touch-in-app
     docker:
       - image: circleci/node:10.16.3
+    filters:
+      branches:
+        only:
+          - develop
     steps:
       - checkout
       - restore_cache:
