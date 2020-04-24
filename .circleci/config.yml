@@ -4,9 +4,6 @@ jobs:
     working_directory: ~/touch-in-app
     docker:
       - image: circleci/node:10.16.3
-    branches:
-      only:
-        - develop
     steps:
       - checkout
       - restore_cache:
@@ -28,3 +25,11 @@ jobs:
       - run:
           name: firebase-deploy
           command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --only hosting --project touch-in-app
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: develop
