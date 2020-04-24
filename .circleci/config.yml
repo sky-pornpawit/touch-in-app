@@ -1,9 +1,10 @@
 version: 2.1
 jobs:
   build:
-    branches:
-      only:
-        - develop
+    filters:
+      branches:
+        only:
+          - develop
     working_directory: ~/touch-in-app
     docker:
       - image: circleci/node:10.16.3
