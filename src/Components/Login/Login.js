@@ -28,7 +28,6 @@ export class Login extends Component {
             <div className="container">
                 <Logo />
                 <br/> 
-                <hr />
                 <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()} />
             </div>
         )
